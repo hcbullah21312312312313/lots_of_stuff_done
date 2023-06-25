@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/admin.css">
+    <title>BRAND</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col col-lg-2 sidebar">
+            <h3 class="brandy"><i class="fa-solid fa-chart-line"></i> &nbsp;Dashbord</h3>
+            <ul class="navbar-nav">
+                <li class="nav-item"id='1'onClick="reply_click(this.id)">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-chart-line"></i> &nbsp;&nbsp;Dashboard</a>
+                </li>
+                <li class="nav-item"id='2'onClick="reply_click(this.id)">
+                    <a class="nav-link" href="/admin/transactions"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;&nbsp;Transactions</a>
+                </li>
+                <li class="nav-item" id='3'onClick="reply_click(this.id)">
+                    <a class="nav-link " href="#"><i class="fa fa-microphone-slash" aria-hidden="true"></i> &nbsp;Messengar</a>
+                </li>
+                <li class="nav-item"id='4' onClick="reply_click(this.id)">
+                    <a class="nav-link" href="/database" tabindex="-1" aria-disabled="true"><i class="fa fa-database" aria-hidden="true"></i> &nbsp;&nbsp;Database</a>
+                </li>
+                <li class="nav-item"id='5'onClick="reply_click(this.id)">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"> <i class="fa fa-file" aria-hidden="true"></i> &nbsp;&nbsp;Application</a>
+                </li>
+                <li class="nav-item"id='6'onClick="reply_click(this.id)">
+                    <a class="nav-link" href="/database/add" tabindex="-1" aria-disabled="true"> <i class="fa-solid fa-plus"></i> &nbsp;&nbsp;Add</a>
+                </li>
+                <li class="nav-item"id='7'onClick="reply_click(this.id)">
+                    <a class="nav-link" onClick="sidebar()" href="#" tabindex="-1" aria-disabled="true"> <i
+                        class="fa-solid fa-paper-plane"></i> &nbsp;&nbsp;Send Reminder</a>
+                </li>
+                <li class="nav-item"id='8'onClick="reply_click(this.id)">
+                    <a class="nav-link" onClick="notificationBar()" href="#" tabindex="-1" aria-disabled="true"> <i
+                        class="fa-solid fa-paper-plane"></i> &nbsp;&nbsp;Send Notifications</a>
+                </li>
+                
+            </ul>
+        </div>
+    
+        

@@ -1,0 +1,370 @@
+<%- include('bootstrap5-header') %>
+
+    <div class="col mt-5 ">
+        <h2 class="navbar-brand mx-4">Recent Applications</h2>
+        <hr>
+        <!-- I inserted dummy data in there -->
+        <% applications.forEach(application=> { %>
+            <div class=" alert alert-success row applicationbar">
+                <div class="col">
+                    <h5> Applicant Name </h5>
+                    <h6>
+                        <%= application.firstName %>
+                    </h6>
+                </div>
+                <div class="col">
+                    <h5> Father Name </h5>
+                    <h6>
+                        <%= application.fatherName %>
+                    </h6>
+                </div>
+                <div class="col">
+                    <h5> Institituin Name </h5>
+                    <h6>
+                        <%= application.lastInstitution %>
+                    </h6>
+                </div>
+                <div class="col">
+                    <h5> Phone </h5>
+                    <h6>
+                        <%= application.email%>
+                    </h6>
+                </div>
+            </div>
+            <div class="row ">
+                <a href="/admin/application/appId/<%=application.id%>" class="btn ml-1 btn-success">Visit
+                    Application</a>
+            </div>
+            <hr class="mt-2">
+            <% }) %>
+                <!-- I inserted dummy data in there -->
+    </div>
+    <div class="col col-lg-4 mt-5" id="sidebar" style="display: none;">
+
+        <h2 class="navbar-brand mx-4">Send Reminders</h2>
+        <hr>
+        <div style="margin-left: 10%;margin-right: 10%;">
+        <h2 class="navbar-brand mx-4 mt-5 mb-5">Send Reminders</h2>
+            <form action="/sendreminder" method="POST">
+                <div class="row">
+                    <div class="col"><label for="class">Enter the class</label></div>
+                    <div class="col">
+                        <select class="form-select" name="class">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="fees" class="">Message</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="text" class="form-select" name="message" id="message">
+                    </div>
+                </div><div class="row mt-2">
+                    <div class="col">
+                        <label for="fees" class="">Issue Date</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="text" class="form-select" name="issueDate" id="issueDate">
+                    </div>
+                </div><div class="row mt-2">
+                    <div class="col">
+                        <label for="fees" class="">Due Date</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="text" class="form-select" name="dueDate" id="dueDate">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="month" class="">For Month</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="text" class="form-select" name="month" id="month">
+                    </div>
+                </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label for="fees" class="">Tuition fee</label>
+                        </div>
+                        <div class="col ml-2">
+                            <input type="number" class="form-select" name="tutionFee" id="tutionFee">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label for="dues">Hostal fee</label>
+                        </div>
+                        <div class="col ml-2">
+                            <input type="number" class="form-select" name="hostelFee" id="hostelFee">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label for="dues">Transport fee</label>
+                        </div>
+                        <div class="col ml-2">
+                            <input type="number" class="form-select" name="transportFee" id="transportFee">
+                        </div>
+                    </div><div class="row mt-2">
+                        <div class="col">
+                            <label for="dues">Due Payments</label>
+                        </div>
+                        <div class="col ml-2">
+                            <input type="number" class="form-select" name="duePayments" id="duePayments">
+                        </div>
+                    </div><div class="row mt-2">
+                        <div class="col">
+                            <label for="dues">Tax</label>
+                        </div>
+                        <div class="col ml-2">
+                            <input type="number" class="form-select" name="tax" id="tax">
+                        </div>
+                    </div><div class="row mt-2">
+                        <div class="col">
+                            <label for="dues">Totall Amount</label>
+                        </div>
+                        <div class="col ml-2">
+                            <input type="number" class="form-select" name="totall" id="totall">
+                        </div>
+                    </div>
+                            <button type="submit" class="nav-link btn btn-primary text-light mt-3">&nbsp;<i
+                                class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Send Reminders &nbsp;&nbsp;</button>
+                        
+               
+            </form>
+        </div>
+        <!-- <div style="margin-left: 10%;margin-right: 10%;">
+            <h2 class="navbar-brand mx-4 mt-5 mb-5">Send reminder to a specific class</h2>
+            <form action="/sendreminder?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
+                    <div class="row">
+                        <div class="col"><label for="class">Enter the class</label></div>
+                        <div class="col">
+                            <select class="form-select" name="class">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label for="fees" class="">Enter the roll no</label>
+                        </div>
+                        <div class="col ml-2">
+                            <select class="form-select" id="rollno" name="rollno" onchange="handleSelection()">
+                                <option value="all">All</option>
+                                <option value="custom">custom</option>
+                            </select>
+                            
+                        </div>
+                    </div>  <div class="row mt-2">
+                            <div class="col">
+                                <label for="fees" class="">Custom Rollno</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="croll" id="tfee">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label for="fees" class="">Tuition fee</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="tfee" id="tfee">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label for="dues">Hostal fee</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="hfee" id="hfee">
+                            </div>
+                        </div><div class="row mt-2">
+                            <div class="col">
+                                <label for="dues">Misc</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="mfee" id="hfee">
+                            </div>
+                        </div><div class="row mt-2">
+                            <div class="col">
+                                <label for="dues">Transport Fee</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="trfee" id="trfee">
+                            </div>
+                        </div><div class="row mt-2">
+                            <div class="col">
+                                <label for="dues">Enter the totall amount</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="totalfee" id="totallfee">
+                            </div>
+                        </div>
+                                <button type="submit" class="nav-link btn btn-primary text-light mt-3">&nbsp;<i
+                                    class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Send Reminder &nbsp;&nbsp;</button>
+                            
+                   
+                </form>
+            </div> -->
+    </div>
+    
+
+
+
+
+
+
+    <div class="col col-lg-4 mt-5" id="notificationBar" style="display: none;">
+
+        <h2 class="navbar-brand mx-4">Send Notifications</h2>
+        <hr>
+        <div style="margin-left: 10%;margin-right: 10%;">
+        <h2 class="navbar-brand mx-4 mt-5 mb-5">Send Notification</h2>
+            <form action="/sendNotifications" method="POST">
+                <div class="row">
+                    <div class="col"><label for="class">Enter the class</label></div>
+                    <div class="col">
+                        <select class="form-select" name="class">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="all">All</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="fees" class="">Message</label>
+                    </div>
+                    <div class="col ml-2">
+                        <textarea  class="form-select" name="message" id="message"></textarea>
+                    </div>
+                </div>
+                            <button type="submit" class="nav-link btn btn-primary text-light mt-3">&nbsp;<i
+                                class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Send Reminders &nbsp;&nbsp;</button>
+                        
+               
+            </form>
+        </div>
+        <!-- <div style="margin-left: 10%;margin-right: 10%;">
+            <h2 class="navbar-brand mx-4 mt-5 mb-5">Send reminder to a specific class</h2>
+            <form action="/sendreminder?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
+                    <div class="row">
+                        <div class="col"><label for="class">Enter the class</label></div>
+                        <div class="col">
+                            <select class="form-select" name="class">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label for="fees" class="">Enter the roll no</label>
+                        </div>
+                        <div class="col ml-2">
+                            <select class="form-select" id="rollno" name="rollno" onchange="handleSelection()">
+                                <option value="all">All</option>
+                                <option value="custom">custom</option>
+                            </select>
+                            
+                        </div>
+                    </div>  <div class="row mt-2">
+                            <div class="col">
+                                <label for="fees" class="">Custom Rollno</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="croll" id="tfee">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label for="fees" class="">Tuition fee</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="tfee" id="tfee">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label for="dues">Hostal fee</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="hfee" id="hfee">
+                            </div>
+                        </div><div class="row mt-2">
+                            <div class="col">
+                                <label for="dues">Misc</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="mfee" id="hfee">
+                            </div>
+                        </div><div class="row mt-2">
+                            <div class="col">
+                                <label for="dues">Transport Fee</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="trfee" id="trfee">
+                            </div>
+                        </div><div class="row mt-2">
+                            <div class="col">
+                                <label for="dues">Enter the totall amount</label>
+                            </div>
+                            <div class="col ml-2">
+                                <input type="number" class="form-select" name="totalfee" id="totallfee">
+                            </div>
+                        </div>
+                                <button type="submit" class="nav-link btn btn-primary text-light mt-3">&nbsp;<i
+                                    class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Send Reminder &nbsp;&nbsp;</button>
+                            
+                   
+                </form>
+            </div> -->
+    </div>
+
+    <%- include('bootstrap5-footer') %>

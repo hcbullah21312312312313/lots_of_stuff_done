@@ -1,0 +1,15 @@
+hr {
+  margin-top: -0.6rem;
+  border: 0.001rem solid rgb(220, 215, 215);
+}
+.shadow {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.shadow2{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+p{
+  font-size: smaller;
+}
+
+

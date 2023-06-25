@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/admin.css">
+    <title>BRAND</title>
+</head>
+
+<body style="zoom: 75%;">
+    <div class="row mt-5" style="margin-left: 1rem;height: 100rem;">
+        <div class="col col-lg-2 sidebar" style="border-right:0.1rem solid rgb(204, 202, 202)">
+            <h3 class="brandy"><i class="fa-solid fa-chart-line"></i> &nbsp;Transactions</h3>
+            <ul class="navbar-nav mt-5" >
+                <li class="nav-item"id='1'onClick="reply_click(this.id)">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-chart-line"></i> &nbsp;&nbsp;Dashboard</a>
+                </li>
+                <li class="nav-item mt-2"id='2'onClick="reply_click(this.id)">
+                    <a class="nav-link" href="/admin/transactions"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;&nbsp;Transactions</a>
+                </li>
+                <li class="nav-item mt-2" id='3'onClick="reply_click(this.id)">
+                    <a class="nav-link " href="#"><i class="fa fa-microphone-slash" aria-hidden="true"></i> &nbsp;Messengar</a>
+                </li>
+                <li class="nav-item mt-2" id='4' onClick="reply_click(this.id)">
+                    <a class="nav-link" href="/database" tabindex="-1" aria-disabled="true"><i class="fa fa-database" aria-hidden="true"></i> &nbsp;&nbsp;Database</a>
+                </li>
+                <li class="nav-item mt-2"id='5'onClick="reply_click(this.id)">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"> <i class="fa fa-file" aria-hidden="true"></i> &nbsp;&nbsp;Application</a>
+                </li>
+                <li class="nav-item mt-2"id='6'onClick="reply_click(this.id)">
+                    <a class="nav-link" href="/database/add" tabindex="-1" aria-disabled="true"> <i class="fa-solid fa-plus"></i> &nbsp;&nbsp;Add</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col col-lg-10">
+            <h2>Recent Transactions</h2>
+            <hr>
+            <div style="background-color: rgb(204, 211, 217);border-radius: 2%;border: 0.1rem solid rgb(203, 197, 197);">
+                <div class="row p-3">
+                    <div class="col">
+                        <h4 >  Student Name </h4>
+
+                    </div>
+                    <div class="col">
+                        <h4>  Student ID </h4>
+                        
+                    </div><div class="col">
+                        <h4>  Fee Amount </h4>
+                        
+                    </div><div class="col">
+                        <h4>  Month </h4>
+                        
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col">
+                        <h5>  Student Name </h5>
+
+                    </div>
+                    <div class="col">
+                        <h5>  Student ID </h5>
+                        
+                    </div><div class="col">
+                        <h5>  Fee Amount </h5>
+                        
+                    </div><div class="col">
+                        <h5>  Month </h5>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <a href="/admin/transactions/appId/<%=application.id%>" class="btn ml-1 btn-dark">Visit Application</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+        <%-include('footer') %>

@@ -1,0 +1,46 @@
+<%-include('header')%>
+<h1 style="text-align: center;">
+    Send Reminder
+</h1>
+<div class="container">
+    <form action="/sendReminder" method="post">
+        <div class="form-group">
+            <label class="control-label" for="name">Name</label>
+            <input type="text" class="form-control" name="name" id="name" value="" required>
+            
+            <label class="control-label" for="name">Roll no</label>
+            <input type="number" class="form-control mb-3" name="rollno" id="rollno" value="" required>
+            <div class="row mb-3">
+                <div class="col">
+                    <label class="control-label" for="name">Tution fee</label>
+                    <input type="number" class="form-control" name="tFee" id="tutionFee" value="" required>
+                </div>
+                <div class="col">
+                    <label class="control-label" for="name">Hostel fee</label>
+                    <input type="number" class="form-control" name="hFee" id="hostelFee" value="" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label class="control-label" for="name">Transport fee</label>
+                    <input type="number" class="form-control" name="trFee" id="transportFee" value="" required>
+                </div>
+                
+                <div class="col">
+                    <label class="control-label" for="name">Mics fee</label>
+                    <input type="number" class="form-control" name="mFee" id="miscFee" value="" required>
+                </div>
+                <div class="col">
+                    <label class="control-label" for="name">DATE</label>
+                    <input type="date" class="form-control" name="date" id="date" value="" required>
+                </div>
+            </div>
+            
+            
+            <label class="control-label" for="amount">Message</label>
+            <textarea name="message" id="message" class="form-control" cols="30" rows="10" placeholder="Enter the message you want to deliver to the student"></textarea>
+        </div>
+    <button type="submit" class="btn btn-outline-dark">Send  &nbsp;<i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+</div>
+<%-include('footer')%>

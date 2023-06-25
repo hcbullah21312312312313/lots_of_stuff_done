@@ -1,0 +1,238 @@
+body {
+  zoom: 0.75;
+  touch-action: pan-y;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+nav {
+  padding: 0 1rem;
+}
+
+.container-fluid,
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container {
+  padding: 0;
+  margin: 0 auto;
+  border: 0;
+}
+
+@media (max-width: 990px) {
+  .navbar-right {
+    margin-left: auto;
+  }
+}
+
+.nav-link:hover {
+  opacity: 0.5;
+}
+
+footer {
+  color: white !important;
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  animation: background-color 20s;
+  min-height: 100vh;
+}
+
+.container .col-lg-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  border: none;
+  background-color: inherit;
+}
+
+.card .face {
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.06);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  backface-visibility: hidden;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+.card .face.front-face,
+.card .face.back-face {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .face.front-face .profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card .face.front-face .name {
+  letter-spacing: 2px;
+}
+
+.card .face.front-face .designation {
+  font-size: 1.3rem;
+  color: #ddd;
+  letter-spacing: 0.8px;
+}
+
+.card:hover .face.front-face {
+  transform: rotateY(180deg);
+}
+
+.card .face.back-face {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.06);
+  transform: rotateY(180deg);
+  padding: 20px 30px;
+  text-align: center;
+  user-select: none;
+}
+
+.card .face.back-face .fa-quote-left {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 1.2rem;
+}
+
+.card .face.back-face .fa-quote-right {
+  position: absolute;
+  bottom: 35px;
+  right: 25px;
+  font-size: 1.2rem;
+}
+
+.card:hover .face.back-face {
+  transform: rotateY(360deg);
+}
+
+@media (max-width: 991.5px) {
+  .col-lg-4 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+.input--style-5 {
+  background: #e5e5e5;
+  line-height: 50px;
+  border-radius: 5px;
+  padding: 0 22px;
+  font-size: 16px;
+  color: #555;
+}
+
+@media (max-width: 767px) {
+  .input-group-desc {
+    margin-bottom: 40px;
+  }
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.message-header {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.message {
+  font-size: large;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.news-box {
+  padding: 2rem;
+  padding-left: 1rem;
+  padding-top: 0;
+  border: 0.1rem solid grey;
+  border-top: 2rem solid black;
+  height: 34rem;
+  overflow: hidden;
+}
+
+p {
+  font-family: montserrat;
+}
+
+li {
+  font-size: 1.2rem;
+}
+
+.breaking-news {
+  background-color: white;
+}
+
+.news-scroll {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.message-header,
+.message,
+.news-box {
+  font-family: Montserrat;
+}
+
+.news-box {
+  border: 0.1rem solid rgb(232, 227, 227);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+  padding: 1rem;
+}
+
+.topnav {
+  padding-right: 0.5rem;
+}
+
+.bg-darky {
+  background-color: rgb(29, 28, 28);
+}
+
+.navbar-brand {
+  font-family: 'Merienda', cursive;
+}
+
+.navbar-toggler-icon {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.nav-link{
+  font-family: Montserrat;
+  text-decoration: none;
+  font-size: 1rem;
+}

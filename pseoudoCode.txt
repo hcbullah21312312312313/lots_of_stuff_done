@@ -1,0 +1,41 @@
+MONTHLY DUES SYSTEM
+############################################################################################################################################################################################
+1.Take note of every student registration date.
+##############################################################################################################################################################################################
+2.make a conditional statement that check wether the date today is 1st or not
+	date.now()==1 ? issue him the slip form with current date and time : do nothing
+	
+	How the slip looks like?
+	a. It something similar to a table 
+	b. It has fields like name,date,tution fee and blah blah.......
+	c. At the bottom of that table there must be a button saying pay now.
+	d. After the pay button is pressed the form appears with embedded id of the studnet regarding his database.
+	e. The form accepts a payment reciept the name of the file is send to the student's reciept database with their name and database.
+##############################################################################################################################################################################################
+3.Load the payment reciept for the admin.
+	a. As the response to the fee is send to the admin dashboard the admin approve or decline the payment.
+	   reciept===accurate ? approve : decline and how are we gonna achive this
+		(a.1). When the admin opens a specific attempt he will load all the data from the database inside a form that will autofilled 
+		(a.2). Using the value attribute and will be feeded vai <%= mongodb %>.
+		(a.3). The form will contain an HTML Select tag. 
+								<selction name="payment">
+								<option value='payed'>Approve</option>
+								<option value='unpaid'>Declined</option>
+								</selection>
+		(a.4). If the payment is going to decline add an <input placeholder="Why is the payment being declined?">
+		
+		
+	b.
+
+		if(approved==true){
+			publish an updated version of the form to database that keeps track of the history of the students so that the students can view it later.
+			And load it later within a green box saying that the payment was approved.
+		}esle{
+			Publish an updated version of the form with payment status declined.
+			And load it later within a red box saying that the payment was declined.
+			Also load the reason why was it declined.
+			Add another button that load the same slip and form again.‍
+		}
+
+
+##############################################################################################################################################################################################

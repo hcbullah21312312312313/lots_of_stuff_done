@@ -1,0 +1,32 @@
+<%-include('login-header')%>
+
+  <body class="text-center">
+    <form class="form-signin" action="/login" method="post" style="min-width: 25rem;">
+      <img class="mb-4 rounded-circle display-1" src="img/logo.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <div id="error-message" class="alert alert-danger" role="alert" style="display: none;">
+        
+        <i class="fa-solid fa-triangle-exclamation"></i> &nbsp; Invalid email or password. Please try again.
+      </div>
+      <input type="email" id="inputEmail" name="username" class="form-control" placeholder="Email address" required autofocus>
+      
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button style="width:100%" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+    <script>
+      let message=new URLSearchParams(window.location.search)
+      let actualMessage=message.get('error')
+      if(actualMessage){
+        const errorBox=document.getElementById('error-message')
+        errorBox.textContent=actualMessage
+        errorBox.style.display='block'
+      }
+    </script>
+  </body>
+</html>

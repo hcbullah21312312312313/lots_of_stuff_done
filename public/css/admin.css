@@ -1,0 +1,50 @@
+/* Admin PAGE STYLING */
+body{
+    zoom: 75%;
+    border: 0cap;
+}
+.sidebar{
+    border-right: 0.1rem solid rgb(209, 202, 202);
+    background-color: rgb(248, 245, 245);
+    height: 200vh;
+  }
+  .brandy{
+    margin-top: 2rem;
+    margin-left: 2.5rem !important;
+
+  }
+  .logo{
+    width:140px;
+    margin-left: 9.5rem;
+    margin-top: 2rem;
+  }
+  ul{
+    margin-top:4rem ;
+  }
+  li{
+    padding-left: 3rem;
+
+  }
+  ul li a{
+    padding-left: 3rem;
+    margin-top: 2rem;
+    color:rgb(114, 117, 111) 
+  }
+  .clicked {
+    border-left:0.5rem solid rgb(0, 0, 255);
+    color:rgb(15, 226, 15)
+  } 
+
+table td{
+    padding: 1.1rem !important;
+}
+.align{
+  text-align: center;
+}
+.applicationbar{
+  height: 6rem;
+  padding:1rem
+}
+.center{
+  text-align: center;
+}

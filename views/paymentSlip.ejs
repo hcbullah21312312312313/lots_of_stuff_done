@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="images/favicon.png" rel="icon" />
+<title>Recharge Invoice - Koice</title>
+<meta name="author" content="harnishdesign.net">
+
+<!-- Web Fonts
+======================= -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900' type='text/css'>
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+<!-- Stylesheet
+======================= -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>">
+
+</head>
+<body style="zoom: 75%;">
+<!-- Container -->
+<div class="container-fluid invoice-container"> 
+  <!-- Header -->
+  <header>
+    <% data.forEach(item=>{ %>
+    <div class="row align-items-center">
+      <div class="col-sm-7 text-center text-sm-start mb-3 mb-sm-0"> <img width="100px" height="100px" class="rounded-circle bg-dark" src="<%=mediaPath%>logohouse-removebg-preview.png" alt=""> </div>
+      <div class="col-sm-5 text-center text-sm-end">
+        <h4 class="mb-0">The Lighthouse System Of School And Colleges</h4>
+        <p class="mb-0">Invoice Number - <%= item.studentId %></p>
+      </div>
+    </div>
+    <hr>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <div class="row">
+      <div class="col-sm-6 text-sm-end order-sm-1"> <strong>Pay To:</strong>
+        <address>
+        THE LSSC<br />
+        kALU kHAN<br />
+        Mardan Road,Swabi City
+        </address>
+      </div>
+      <div class="col-sm-6 order-sm-0"> <strong>Invoiced To:</strong>
+        <address>
+        <span style="color: rgb(130, 127, 127);"><strong>Name :</strong>  </span> <%=item.name%> S,D/O <%=item.fatherName%> <br />
+        <span style="color: rgb(130, 127, 127);"><strong>Email &nbsp;:</strong></span>   <%=item.username%><br />
+        <span style="color: rgb(130, 127, 127);"><strong>Class : </strong></span><%=item.class%> <%=item.dicipline%><br />
+        <span style="color: rgb(130, 127, 127);"><strong>Roll no : </strong></span><%=item.rollno%>
+        </address>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"> <strong>Payment Methods:</strong><br>
+        <span> Bank / Physical </span> <br />
+        <br />
+      </div>
+      <div class="col-sm-6 text-sm-end"> <strong>Due Date:</strong><br>
+        <span> <%=item.dueDate%><br>
+        <br>
+        </span> </div>
+    </div>
+    <div class="card">
+      <div class="card-header"> <span class="fw-600 text-4">Payment Summary</span> </div>
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <td class="col-8"><strong>Description</strong></td>
+                <td class="col-2 text-center"><strong>Month</strong></td>
+                <td class="col-2 text-end"><strong>Amount</strong></td>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="text-3">Tutition Fee</td>
+                    <td class="text-center"><%=item.month%></td>
+                    <td class="text-end"><%=item.tutionFee%> PKR</td>
+                  </tr><tr>
+                    <td><span class="text-3">Hostel Fee</td>
+                    <td class="text-center"><%=item.month%></td>
+                    <td class="text-end"><%=item.hostelFee%> PKR</td>
+                  </tr><tr>
+                    <td><span class="text-3">Transpoart Fee</td>
+                    <td class="text-center"><%=item.month%></td>
+                    <td class="text-end"><%=item.transportFee%> PKR</td>
+                  </tr><tr>
+                    <td><span class="text-3">Previoius Fee</td>
+                    <td class="text-center"><%=item.month%></td>
+                    <td class="text-end"><%=item.duePayments%> PKR</td>
+                  </tr>
+            </tbody>
+			<tfoot class="card-footer">
+			 
+              <tr>
+                <td colspan="2" class="text-end"><strong>Tax:</strong></td>
+                <td class="text-end"><%=item.tax%></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="text-end"><strong>Total:</strong></td>
+                <% var totalAmount = item.duePayments + item.tax + item.hostelFee + item.tutionFee + item.transportFee %>
+                <td class="text-end"><%=totalAmount%> PKR</td>
+              </tr>
+			</tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="table-responsive d-print-none">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td class="text-center"><strong>Transaction Date</strong></td>
+            <td class="text-center"><strong>Payment Status</strong></td>
+            <td class="text-center"><strong>Due Date</strong></td>
+            <td class="text-center"><strong>Amount</strong></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">-</td>
+            <td class="text-center"><%=item.paymentStatus%></td>
+            <td class="text-center"><%=item.dueDate%></td>
+            <td class="text-center"><%=totalAmount%> PKR</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="text-center">
+    <p class="text-1"><strong>NOTE :</strong> This is computer generated receipt and does not require physical signature.</p>
+    <div class="btn-group btn-group-sm d-print-none"> <a href="javascript:window.print()" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print</a> <a href="" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i> Download</a> </div>
+  </footer>
+</div>
+<% }) %>
+<!-- Back to My Account Link -->
+<p class="text-center d-print-none"><a href="#">&laquo; Back to My Account</a></p>
+</body>
+</html>
